@@ -1,0 +1,73 @@
+<dataSource name="Derby (Remote) - oca@localhost">
+  <database-model serializer="dbm" rdbms="DERBY" format-version="2.6">
+    <schema id="1" name="JPA">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="APP" />
+    <schema id="3" name="NULLID" />
+    <schema id="4" name="SQLJ" />
+    <schema id="5" name="SYS" />
+    <schema id="6" name="SYSCAT" />
+    <schema id="7" name="SYSCS_DIAG" />
+    <schema id="8" name="SYSCS_UTIL" />
+    <schema id="9" name="SYSFUN" />
+    <schema id="10" name="SYSIBM" />
+    <schema id="11" name="SYSPROC" />
+    <schema id="12" name="SYSSTAT" />
+    <table id="13" parent="1" name="ADMIN" />
+    <table id="14" parent="1" name="QUESTION" />
+    <table id="15" parent="1" name="SEQUENCE" />
+    <column id="16" parent="13" name="ID">
+      <mandatory>1</mandatory>
+      <data-type>BIGINT(19)|-5</data-type>
+    </column>
+    <column id="17" parent="13" name="PASSWORD">
+      <data-type>VARCHAR(255)|12</data-type>
+    </column>
+    <column id="18" parent="13" name="USERNAME">
+      <data-type>VARCHAR(255)|12</data-type>
+    </column>
+    <key id="19" parent="13" name="SQL160902102626450">
+      <name-surrogate>1</name-surrogate>
+      <columns>ID</columns>
+      <primary>1</primary>
+    </key>
+    <column id="20" parent="14" name="ID">
+      <mandatory>1</mandatory>
+      <data-type>BIGINT(19)|-5</data-type>
+    </column>
+    <column id="21" parent="14" name="ANSWER">
+      <data-type>VARCHAR(255)|12</data-type>
+    </column>
+    <column id="22" parent="14" name="CAN">
+      <data-type>SMALLINT(5)|5</data-type>
+      <default-expression>0</default-expression>
+    </column>
+    <column id="23" parent="14" name="CHAPTER">
+      <data-type>INTEGER(10)|4</data-type>
+    </column>
+    <column id="24" parent="14" name="NUMBER">
+      <data-type>INTEGER(10)|4</data-type>
+    </column>
+    <column id="25" parent="14" name="QUESTION">
+      <data-type>VARCHAR(255)|12</data-type>
+    </column>
+    <key id="26" parent="14" name="SQL160825100657820">
+      <name-surrogate>1</name-surrogate>
+      <columns>ID</columns>
+      <primary>1</primary>
+    </key>
+    <column id="27" parent="15" name="SEQ_NAME">
+      <mandatory>1</mandatory>
+      <data-type>VARCHAR(50)|12</data-type>
+    </column>
+    <column id="28" parent="15" name="SEQ_COUNT">
+      <data-type>DECIMAL(15)|3</data-type>
+    </column>
+    <key id="29" parent="15" name="SQL160825100657860">
+      <name-surrogate>1</name-surrogate>
+      <columns>SEQ_NAME</columns>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>

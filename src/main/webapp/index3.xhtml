@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head></h:head>
+<body>
+<h:form>
+
+    <h:panelGrid columns="5" border="1">
+        <h:panelGrid columns="2">
+
+            <h:outputLabel value="Question"/> <h:inputText id="question" value="#{indexBean.question}"/>
+            <h:outputLabel value="Answer"/> <h:inputText id="answer" value="#{indexBean.answer}"/>
+            <h:commandButton value="Add" action="#{indexBean.add}"/>
+        </h:panelGrid>
+        <h:outputLabel value="------------" />
+
+    </h:panelGrid>
+</h:form>
+</body>
+</html>

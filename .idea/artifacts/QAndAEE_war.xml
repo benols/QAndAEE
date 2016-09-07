@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="QAndAEE:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="QAndAEE-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="QAndAEE:war exploded" />
+    </root>
+  </artifact>
+</component>
