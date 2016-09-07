@@ -95,4 +95,9 @@ public class Question implements Serializable{
     public void setCan(boolean can) {
         this.can = can;
     }
+    @Override
+    public String toString(){
+        return question + " " + answer;
+    }
+
 }

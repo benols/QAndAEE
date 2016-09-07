@@ -3,16 +3,17 @@
  */
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
 @Named
-@RequestScoped
-public class IndexBean {
+@SessionScoped
+public class IndexBean implements Serializable{
 
     /*private Long id;
     private int chapter;
@@ -24,7 +25,7 @@ public class IndexBean {
     //private String password;
     private Question question1;
     private List<Question> questions;
-    int index = 0;
+    int index;
     //private Admin admin = new Admin("admin", "admin", 666L);
     private Admin admin = new Admin();
     private String out;
@@ -37,13 +38,14 @@ public class IndexBean {
     @PostConstruct
     public void init() {
         //question1 = new Question(1, 1, "question", "answer");
-        long index = 0;
+  //      long index = 0;
+
         questions = service.getAll("");
         question1 = questions.get((int)index);
         //ejbAdmin.addUser(admin);
         admin.setUsername("");
         admin.setPassword("");
-        out = question1.getQuestion();
+        //out = question1.getQuestion();
     }
 
     public String login(){
@@ -53,7 +55,7 @@ public class IndexBean {
         return "index";
     }
     public String getQuestion() {
-        out = question1.getQuestion();
+        //out = question1.getQuestion();
         return question1.getQuestion();
     }
 
@@ -67,6 +69,8 @@ public class IndexBean {
 
     public String viewAnswer(){
         //out = question1.getAnswer();
+        System.out.println(question1);
+        setAnswer(question1.getAnswer());
         return "viewAnswer";
     }
 
@@ -81,8 +85,17 @@ public class IndexBean {
         return ids;
     }
 
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
+    }
+
     public String viewNextQuestion(){
         index++;
+        System.out.println(index);
         question1 = questions.get(index);
         //out = question1.getQuestion();
         /*System.out.println("In getNextQuestion ");
@@ -186,6 +199,8 @@ public class IndexBean {
     }
 
     public String getAnswer() {
+        System.out.println(question1);
+
         return question1.getAnswer();
     }
 }
